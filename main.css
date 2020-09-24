@@ -1,7 +1,11 @@
 #signup-form-wrapper {
+  padding: 60px;
+  padding-bottom: 52px;
+  margin-top: 16px;
   background-color: #FFFFFF;
   border-radius: 5px;
-  padding: 60px;
+  -webkit-box-shadow: 0 6px 67px 0 rgba(11, 116, 55, 0.14);
+          box-shadow: 0 6px 67px 0 rgba(11, 116, 55, 0.14);
   --label-color: #888888;
   --input-color: #4D4D4D; }
   #signup-form-wrapper header h3 {
@@ -30,6 +34,8 @@
         position: relative;
         font-size: 15px;
         font-weight: 400; }
+        #signup-form-wrapper form .input-field label:focus, #signup-form-wrapper form .input-field input:focus {
+          outline: none; }
       #signup-form-wrapper form .input-field__text {
         height: 48px; }
         #signup-form-wrapper form .input-field__text label {
@@ -57,14 +63,13 @@
           border-bottom: 1px solid #E4E4E4;
           color: var(--input-color);
           padding-bottom: 8px; }
-          #signup-form-wrapper form .input-field__text input:focus {
-            outline: none; }
       #signup-form-wrapper form .input-field__checkbox {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap; }
+            flex-wrap: nowrap;
+        margin-top: 27px; }
     #signup-form-wrapper form input[type="checkbox"] {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -85,13 +90,51 @@
         position: relative;
         margin-bottom: 0;
         color: var(--label-color); }
+    #signup-form-wrapper form .privacy-policy {
+      margin-top: 24px;
+      font-family: "Lato", sans-serif;
+      font-size: 13px;
+      text-align: left;
+      color: var(--label-color); }
+      #signup-form-wrapper form .privacy-policy p {
+        margin-bottom: 2rem; }
+    #signup-form-wrapper form button[type="submit"] {
+      width: 100%; }
+
+body > header {
+  position: relative;
+  z-index: 9; }
+
+.button-primary {
+  padding: 12px 16px;
+  background: #D92F26;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 6px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 6px 0 rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px; }
+  .button-primary:focus {
+    outline: none; }
 
 body {
-  background-color: green;
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  padding-top: 66px; }
+
+#main {
+  position: relative;
+  margin-top: -127px; }
 
 .hero {
-  margin-top: 84px; }
+  padding-top: 211px;
+  height: 680px;
+  background-image: linear-gradient(133deg, #0D9B49 0%, rgba(25, 206, 101, 0.3) 100%), linear-gradient(270deg, rgba(255, 255, 255, 0) 22%, #FFFFFF 70%), url("img/2@-hero-background-image.jpg");
+  background-size: contain, contain, contain;
+  background-position: 0 0, 0 0, right center;
+  background-repeat: no-repeat;
+  background-color: #000000; }
   .hero-left-column h1 {
     margin: 0;
     position: relative;
