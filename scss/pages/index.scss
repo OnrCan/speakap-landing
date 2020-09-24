@@ -1,6 +1,14 @@
 $enable-flex: true;
 $enable-grid-classes: true;
 
+:root {
+	--blue-90: #474F55;
+	--grey-90: #4D4D4D;
+	--grey-70: #888888;
+	--grey-40: #B4B4B4;
+	--pizza-red: #D92F26;
+}
+
 body {
 	font-family: $font-family;
 	padding-top: 66px;
@@ -59,8 +67,82 @@ body {
 			color: #FFFFFF;
 		}
 	}
+}
 
-	&-right-column {
-		
+section.benefits {
+	margin-top: 70px;
+	h2 {
+		position: relative;
+		margin-bottom: 17px;
+		font-weight: 500;
+		font-style: italic;
+		font-size: 32px;
+		color: var(--grey-90);
+
+		&:after {
+			content: '';
+			display: block;
+			bottom: 0;
+			width: 68px;
+			height: 4px;
+			margin-top: 17px;
+			background: var(--pizza-red);
+			border-radius: 2px;
+		}
+	}
+
+	.benefits-list {
+		padding-left: 0;
+		list-style-type: none;
+		margin-bottom: 90px;
+		&-item {
+			position: relative;
+			font-size: 17px;
+			font-weight: 300;
+			color: var(--grey-70);
+			line-height: 40px;
+
+			&:before {
+				content: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fad' data-icon='check-circle' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check-circle fa-w-16 fa-2x'%3E%3Cg class='fa-group'%3E%3Cpath fill='%23D9FFE9' d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm155.31 195.31l-184 184a16 16 0 0 1-22.62 0l-104-104a16 16 0 0 1 0-22.62l22.62-22.63a16 16 0 0 1 22.63 0L216 308.12l150.06-150.06a16 16 0 0 1 22.63 0l22.62 22.63a16 16 0 0 1 0 22.62z' class='fa-secondary'%3E%3C/path%3E%3Cpath fill='%230A7A3A' d='M227.31 387.31a16 16 0 0 1-22.62 0l-104-104a16 16 0 0 1 0-22.62l22.62-22.63a16 16 0 0 1 22.63 0L216 308.12l150.06-150.06a16 16 0 0 1 22.63 0l22.62 22.63a16 16 0 0 1 0 22.62l-184 184z' class='fa-primary'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+				position: relative;
+				display: inline-block;
+				margin-right: 18px;
+				width: 29px;
+				height: 29px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.stats-heading {
+		margin: 49px 0;
+		font-weight: 400;
+		font-size: 14px;
+		color: var(--grey-40);
+	}
+
+	.stats-column {
+		svg {
+			vertical-align: middle;
+			margin-right: 16px;
+		}
+		.percentage {
+			vertical-align: middle;
+			font-weight: 700;
+			font-size: 34px;
+			letter-spacing: -2px;
+			line-height: 26px;
+			color: var(--blue-90);
+
+			.plus {
+				color: var(--pizza-red);
+			}
+		}
+		p {
+			font-weight: 300;
+			font-size: 17px;
+			line-height: 26px;
+			color: var(--grey-70);
+		}
 	}
 }
