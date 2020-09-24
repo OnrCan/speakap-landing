@@ -71,6 +71,7 @@ body {
 
 section.benefits {
 	margin-top: 70px;
+	margin-bottom: 150px;
 	h2 {
 		position: relative;
 		margin-bottom: 17px;
@@ -115,27 +116,30 @@ section.benefits {
 	}
 
 	.stats-heading {
-		margin: 49px 0;
+		margin: 50px 0 70px;
 		font-weight: 400;
 		font-size: 14px;
 		color: var(--grey-40);
 	}
 
 	.stats-column {
-		svg {
-			vertical-align: middle;
-			margin-right: 16px;
-		}
-		.percentage {
-			vertical-align: middle;
-			font-weight: 700;
-			font-size: 34px;
-			letter-spacing: -2px;
-			line-height: 26px;
-			color: var(--blue-90);
-
-			.plus {
-				color: var(--pizza-red);
+		&-graph {
+			margin-bottom: 21px;
+			svg {
+				vertical-align: middle;
+				margin-right: 16px;
+			}
+			.percentage {
+				vertical-align: middle;
+				font-weight: 700;
+				font-size: 34px;
+				letter-spacing: -2px;
+				line-height: 26px;
+				color: var(--blue-90);
+	
+				.plus {
+					color: var(--pizza-red);
+				}
 			}
 		}
 		p {
