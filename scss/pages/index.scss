@@ -15,11 +15,14 @@ body {
 	padding-top: 211px;
 	height: 680px;
 	background-image:
+		url('img/2@-hero-background-bubble.png'),
+		url('img/2@-hero-background-waves.png'),
 		linear-gradient(133deg, #0D9B49 0%, rgba(25,206,101,0.30) 100%),
 		linear-gradient(270deg, rgba(255,255,255,0.00) 22%, #FFFFFF 70%),
 		url('img/2@-hero-background-image.jpg');
-	background-size: contain, contain, contain;
-	background-position: 0 0, 0 0, right center;
+
+	background-size: 58rem, contain, contain, contain, contain;
+	background-position: left top, center bottom, 0 0, 0 0, right center;
 	background-repeat: no-repeat;
 	background-color: #000000;
 
