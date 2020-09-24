@@ -130,9 +130,6 @@ section.benefits {
 
 	.stats-heading {
 		margin: 50px 0 70px;
-		font-weight: 400;
-		font-size: 14px;
-		color: var(--grey-40);
 	}
 
 	.stats-column {
@@ -281,7 +278,9 @@ footer {
 
 	.cta-wrapper {
 		margin-bottom: 92px;
-
+		.col {
+			padding: 0 27%;
+		}
 		.regular-text {
 			margin: 27px 0 33px;
 			font-weight: 300;

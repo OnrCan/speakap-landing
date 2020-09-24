@@ -106,6 +106,7 @@ body > header {
   z-index: 9; }
 
 .button-primary {
+  min-width: 225px;
   padding: 12px 16px;
   background: #D92F26;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 6px 0 rgba(0, 0, 0, 0.06);
@@ -218,10 +219,7 @@ section.benefits {
         height: 29px;
         vertical-align: middle; }
   section.benefits .stats-heading {
-    margin: 50px 0 70px;
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--grey-40); }
+    margin: 50px 0 70px; }
   section.benefits .stats-column-graph {
     margin-bottom: 21px; }
     section.benefits .stats-column-graph svg {
@@ -333,6 +331,8 @@ footer {
   background-position: center top; }
   footer .cta-wrapper {
     margin-bottom: 92px; }
+    footer .cta-wrapper .col {
+      padding: 0 27%; }
     footer .cta-wrapper .regular-text {
       margin: 27px 0 33px;
       font-weight: 300;
