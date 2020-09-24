@@ -1,0 +1,14 @@
+@media screen and (max-width: 1150px) {
+	.hero {
+		background-size: 58rem, contain, contain, contain, cover;
+		background-position: left top, center bottom, 0 0, 0 0, center center;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.hero-right-column { display: none; }
+	.testimonial-image {
+		white-space: nowrap;
+		&:not(:last-of-type) { margin-right: 4px;}
+	}
+}
