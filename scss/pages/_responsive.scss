@@ -6,9 +6,30 @@
 }
 
 @media screen and (max-width: 991px) {
+	.hero {
+		height: auto;
+		padding-bottom: 120px;
+	}
+	.hero-left-column .sign-up-cta { display: block !important; }
 	.hero-right-column { display: none; }
-	.testimonial-image {
+	.testimonial-image-wrapper {
 		white-space: nowrap;
 		&:not(:last-of-type) { margin-right: 4px;}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	body {
+		padding-top: 26px;
+	}
+	header .logo-wrapper img {
+		width: 106px;
+	}
+	.hero {
+		padding-top: 191px;
+	}
+	.hero-left-column {
+		p { font-weight: 300; }
+		.sign-up-cta { width: 100%; }
 	}
 }
