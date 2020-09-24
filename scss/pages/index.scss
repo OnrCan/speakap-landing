@@ -150,3 +150,66 @@ section.benefits {
 		}
 	}
 }
+
+section.testimonials {
+	background-color: green;
+	color: #FFFFFF;
+	padding-top: 186px;
+	padding-bottom: 138px;
+	position: relative;
+
+	.testimonial-message {
+		margin: 0 10%;
+		font-family: 'Merriweather', serif;
+		font-weight: 300;
+		font-style: italic;
+		font-size: 22px;
+		line-height: 36px;
+	}
+
+	.testimonial-image-wrapper {
+		left: 50%;
+		transform: translateY(50%) translateX(-50%);
+		bottom: 0;
+		position: absolute;
+	}
+	
+	button.testimonial-image {
+		all: unset;
+		cursor: pointer;
+
+		position: relative;
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;
+
+		&:not(:last-of-type) {
+			margin-right: 8px;
+		}
+
+		&.active:after {
+			transform: scale(1);
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			z-index: 1;
+			bottom: 8px;
+			right: 8px;
+			width: 16px;
+			height: 16px;
+			border: 3px solid #FFFFFF;
+			border-radius: 100%;
+			background-color: var(--pizza-red);
+
+			transform: scale(0);
+			transition: all .3s ease;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
