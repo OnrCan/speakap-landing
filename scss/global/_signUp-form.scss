@@ -1,0 +1,104 @@
+#signup-form-wrapper {
+	background-color: #FFFFFF;
+	border-radius: $border-radius;
+	padding: $column-width;
+
+	--label-color: #888888;
+	--input-color: #4D4D4D;
+	
+	header {
+		h3 {
+			margin-bottom: 12px;
+			transform: rotate(-3deg);
+			font-size: 28px;
+			font-weight: 900;
+			font-style: italic;
+			color: #4D4D4D;
+			letter-spacing: 0;
+			text-align: center;
+			line-height: 26px;
+		}
+		span {
+			font-weight: 400;
+			font-size: 15px;
+			color: #888888;
+			letter-spacing: 0;
+		}
+	}
+
+	form {
+		margin-top: 36px;
+
+		.input-field {
+			position: relative;
+			text-align: left;
+			margin-bottom: 17px;
+			label, input {
+				position: relative;
+				font-size: 15px;
+				font-weight: 400;
+			}
+			&__text {
+				height: 48px;
+				label {
+					display: block;
+					width: 100%;
+					position: relative;
+					margin: 0;
+					z-index: 1;
+					font-size: 15px;
+					line-height: 15px;
+					color: var(--label-color);
+					transform: translateY(1.6em);
+					transition: all .2s ease-out;
+					transform-origin: 0 100%;
+					&.active {
+						transform: none;
+						font-size: 12px;
+					}
+				}
+				input {
+					width: 100%;
+					border: none;
+					border-bottom: 1px solid #E4E4E4;
+					color: var(--input-color);
+					padding-bottom: 8px;
+					&:focus {
+						outline: none;
+					}
+				}	
+			}
+
+			&__checkbox {
+				display: flex;
+				flex-wrap: nowrap;
+			}
+		}
+
+		input[type="checkbox"] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none; 
+			width: 19px;
+			height: 19px;
+			margin-right: 12px;
+			background: #FFFFFF;
+			border: 1px solid #D4D4D4;
+			border-radius: 3px;
+
+			&:checked {
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%230A7A3A' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E");
+				background-position: center center;
+				background-size: 90%;
+				background-repeat: no-repeat;
+			}
+			
+			& + label {
+				font-size: 13px;
+				position: relative;
+				margin-bottom: 0;
+				color: var(--label-color);
+			}
+		}
+	}
+}

@@ -5,21 +5,73 @@
   <meta charset="UTF-8">
   <title>Speakap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header class="header">
     <div class="container">
       <div class="row">
-        <div class="col-8" style="border: 5px solid red;"></div>
-        <div class="col-4" style="border: 5px solid green;"></div>
+        <div class="logo-wrapper col-lg-2">
+          <img src="./img/logo.svg" alt="NYP Connect logo">
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="main">
-
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="hero-left-column col-xs-12 col-lg-6">
+            <h1>THE INTERNAL COMMUNICATION APP FOR NEW YORK PIZZA</h1>
+            <p>NYP Connect is a private and secure social platform that enables you to easily and quickly reach all
+              employees. NYP Connect is always available: in the restaurant, at the head office and from home. The NYP
+              Connect app is a must-have for all your internal communication needs.</p>
+          </div>
+          <div class="hero-right-column col-md-5 offset-md-1">
+            <div id="signup-form-wrapper" class="text-center">
+              <header>
+                <h3>SIGN UP <br>NOW!</h3>
+                <span>Optimize your internal communication</span>
+              </header>
+              <form method="POST">
+                <div class="input-field input-field__text col-xs-12">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name">
+                </div>
+                <div class="input-field input-field__text col-xs-12">
+                  <label for="email">Email address</label>
+                  <input type="email" name="email" id="email">
+                </div>
+                <div class="input-field input-field__text col-xs-12">
+                  <label for="job-title">Job title</label>
+                  <input type="text" name="job-title" id="job-title">
+                </div>
+                <div class="input-field input-field__text col-xs-12">
+                  <label for="location">Franchise location</label>
+                  <input type="text" name="location" id="location">
+                </div>
+                <div class="input-field input-field__checkbox col-xs-12">
+                  <input type="checkbox" name="agree-communication" id="agree-communication">
+                  <label for="agree-communication">I agree to receive communications from Speakap</label>
+                </div>
+                <div class="privacy-policy col-xs-12">
+                  <p>Speakap is 100% committed to respecting and protecting your privacy as the precious treasure
+                    trove
+                    that it is, and we pinky-swear to only use your personal information to administer your account
+                    and
+                    to provide the products and services you requested from us. Cross our hearts. Scout's honour.</p>
+                </div>
+                <button type="submit">SIGNUP FOR A FREE DEMO</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="dist/main.js" type="text/javascript"></script>
 </body>

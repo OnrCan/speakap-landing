@@ -1,8 +1,10 @@
 // 
 $max-width: 1140px;
-$gutter: 20px;
-$border-radius: 3px;
+$gutter: 35px;
+$column-width: 60px;
 $finger-size: 40px;
+
+$border-radius: 5px;
 $font-size: 16px;
 $font-size-small: .9em;
 // Colors
@@ -10,4 +12,5 @@ $font-size-small: .9em;
 
 
 // Fonts
-$font-family: Roboto, 'Open Sans', Arial, sans-serif;
+$font-family: 'Lato', sans-serif;
+
