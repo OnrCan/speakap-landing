@@ -19,6 +19,23 @@ body {
 	margin-top: -127px;
 }
 
+// Section Header
+h2 {
+	font-weight: 600;
+	font-style: italic;
+	font-size: 32px;
+	color: var(--grey-90);
+}
+
+// Small Text
+.small-text {
+	font-weight: 300;
+	font-size: 14px;
+	color: var(--grey-40);
+	text-align: center;
+	margin: 0;
+}
+
 .hero {
 	padding-top: 211px;
 	height: 680px;
@@ -71,14 +88,10 @@ body {
 
 section.benefits {
 	margin-top: 70px;
-	margin-bottom: 150px;
+	margin-bottom: 130px;
 	h2 {
 		position: relative;
 		margin-bottom: 17px;
-		font-weight: 500;
-		font-style: italic;
-		font-size: 32px;
-		color: var(--grey-90);
 
 		&:after {
 			content: '';
@@ -197,10 +210,8 @@ section.testimonials {
 		margin: 0;
 	}
 
-	.testimonial-location {
-		font-weight: 300;
-		font-size: 14px;
-		margin: 0;
+	.small-text {
+		color: #FFFFFF;
 	}
 
 	.testimonial-image-wrapper {
@@ -246,6 +257,50 @@ section.testimonials {
 		img {
 			width: 100%;
 			height: 100%;
+		}
+	}
+}
+
+section.promote {
+	padding: 150px 0 63px;
+	.promote-image {
+		margin-top: 38px;
+		max-width: 100%;
+	}
+}
+
+footer {
+	padding-top: 170px;
+	padding-bottom: 98px;
+	background-image:
+		url('img/bg-waves-footer@2.png');
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+
+	.cta-wrapper {
+		margin-bottom: 92px;
+
+		.regular-text {
+			margin: 27px 0 33px;
+			font-weight: 300;
+			font-size: 17px;
+			color: #939393;
+			line-height: 26px;
+		}
+	}
+
+	.notice-text {
+		font-weight: 300;
+		font-size: 15px;
+		color: #939393;
+		line-height: 26px;
+
+		a {
+			all: unset;
+			cursor: pointer;
+			text-decoration: underline;
 		}
 	}
 }

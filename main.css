@@ -115,7 +115,8 @@ body > header {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 12px; }
+  font-size: 12px;
+  cursor: pointer; }
   .button-primary:focus {
     outline: none; }
 
@@ -133,6 +134,19 @@ body {
 #main {
   position: relative;
   margin-top: -127px; }
+
+h2 {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--grey-90); }
+
+.small-text {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--grey-40);
+  text-align: center;
+  margin: 0; }
 
 .hero {
   padding-top: 211px;
@@ -172,14 +186,10 @@ body {
 
 section.benefits {
   margin-top: 70px;
-  margin-bottom: 150px; }
+  margin-bottom: 130px; }
   section.benefits h2 {
     position: relative;
-    margin-bottom: 17px;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 32px;
-    color: var(--grey-90); }
+    margin-bottom: 17px; }
     section.benefits h2:after {
       content: '';
       display: block;
@@ -268,10 +278,8 @@ section.testimonials {
     font-size: 18px;
     line-height: 36px;
     margin: 0; }
-  section.testimonials .testimonial-location {
-    font-weight: 300;
-    font-size: 14px;
-    margin: 0; }
+  section.testimonials .small-text {
+    color: #FFFFFF; }
   section.testimonials .testimonial-image-wrapper {
     left: 50%;
     -webkit-transform: translateY(50%) translateX(-50%);
@@ -309,3 +317,34 @@ section.testimonials {
     section.testimonials button.testimonial-image img {
       width: 100%;
       height: 100%; }
+
+section.promote {
+  padding: 150px 0 63px; }
+  section.promote .promote-image {
+    margin-top: 38px;
+    max-width: 100%; }
+
+footer {
+  padding-top: 170px;
+  padding-bottom: 98px;
+  background-image: url("img/bg-waves-footer@2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; }
+  footer .cta-wrapper {
+    margin-bottom: 92px; }
+    footer .cta-wrapper .regular-text {
+      margin: 27px 0 33px;
+      font-weight: 300;
+      font-size: 17px;
+      color: #939393;
+      line-height: 26px; }
+  footer .notice-text {
+    font-weight: 300;
+    font-size: 15px;
+    color: #939393;
+    line-height: 26px; }
+    footer .notice-text a {
+      all: unset;
+      cursor: pointer;
+      text-decoration: underline; }
