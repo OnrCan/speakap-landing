@@ -24,6 +24,33 @@
 	}
 }
 
+@media screen and (max-width: 768px) {
+	section.benefits {
+		margin-bottom: 72px;
+		.stats-column {
+			flex-direction: row !important;
+			justify-content: flex-start !important;
+			align-items: center;
+
+			&-graph {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: 16px;
+
+				.percentage {
+					position: absolute;
+					font-weight: 400;
+					font-size: 20px;
+					letter-spacing: -1.18px;
+					line-height: 26px;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 575px) {
 	body {
 		padding-top: 26px;

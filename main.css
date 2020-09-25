@@ -242,20 +242,25 @@ section.benefits {
   section.benefits .stats-heading {
     margin: 50px 0 70px; }
   section.benefits .stats-column-graph {
-    margin-bottom: 21px; }
+    margin-bottom: 21px;
+    white-space: nowrap; }
     section.benefits .stats-column-graph svg {
       vertical-align: middle;
       margin-right: 16px; }
       section.benefits .stats-column-graph svg .hook {
         -webkit-transition: all 1s ease .3s;
         transition: all 1s ease .3s; }
+    section.benefits .stats-column-graph img {
+      width: 104px;
+      height: 104px; }
     section.benefits .stats-column-graph .percentage {
       vertical-align: middle;
       font-weight: 700;
       font-size: 34px;
       letter-spacing: -2px;
       line-height: 26px;
-      color: var(--blue-90); }
+      color: var(--blue-90);
+      white-space: nowrap; }
       section.benefits .stats-column-graph .percentage .plus {
         color: var(--pizza-red); }
   section.benefits .stats-column p {
@@ -407,6 +412,39 @@ footer {
     white-space: nowrap; }
     .testimonial-image-wrapper:not(:last-of-type) {
       margin-right: 4px; } }
+
+@media screen and (max-width: 768px) {
+  section.benefits {
+    margin-bottom: 72px; }
+    section.benefits .stats-column {
+      -webkit-box-orient: horizontal !important;
+      -webkit-box-direction: normal !important;
+          -ms-flex-direction: row !important;
+              flex-direction: row !important;
+      -webkit-box-pack: start !important;
+          -ms-flex-pack: start !important;
+              justify-content: flex-start !important;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      section.benefits .stats-column-graph {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-right: 16px; }
+        section.benefits .stats-column-graph .percentage {
+          position: absolute;
+          font-weight: 400;
+          font-size: 20px;
+          letter-spacing: -1.18px;
+          line-height: 26px; } }
 
 @media screen and (max-width: 575px) {
   body {

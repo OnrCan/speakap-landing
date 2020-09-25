@@ -151,10 +151,16 @@ section.benefits {
 	.stats-column {
 		&-graph {
 			margin-bottom: 21px;
+			white-space: nowrap;
 			svg {
 				vertical-align: middle;
 				margin-right: 16px;
 				.hook { transition: all 1s ease .3s; }
+			}
+			// Mobile chart
+			img {
+				width: 104px;
+				height: 104px;
 			}
 			.percentage {
 				vertical-align: middle;
@@ -163,6 +169,7 @@ section.benefits {
 				letter-spacing: -2px;
 				line-height: 26px;
 				color: var(--blue-90);
+				white-space: nowrap;
 	
 				.plus {
 					color: var(--pizza-red);
