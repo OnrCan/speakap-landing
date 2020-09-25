@@ -5,6 +5,7 @@ $enable-grid-classes: true;
 	--blue-90: #474F55;
 	--grey-90: #4D4D4D;
 	--grey-70: #888888;
+	--grey-60: #939393;
 	--grey-40: #B4B4B4;
 	--pizza-red: #D92F26;
 }
@@ -90,9 +91,21 @@ h2 {
 	}
 
 	&-right-column {
+		position: relative;
 		#signup-form-wrapper {
 			position: relative;
 			z-index: 9;
+
+		}
+		.notice-text {
+			position: absolute;
+			bottom: -76px;
+			left: 50%;
+			transform: translateX(-50%);
+
+			font-weight: 300;
+			font-size: 15px;
+			color: var(--grey-60);
 		}
 	}
 }
@@ -324,7 +337,7 @@ footer {
 			margin: 27px 0 33px;
 			font-weight: 300;
 			font-size: 17px;
-			color: #939393;
+			color: var(--grey-60);
 			line-height: 26px;
 		}
 	}
@@ -332,7 +345,7 @@ footer {
 	.notice-text {
 		font-weight: 300;
 		font-size: 15px;
-		color: #939393;
+		color: var(--grey-60);
 		line-height: 26px;
 
 		a {
