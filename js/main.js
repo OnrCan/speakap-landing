@@ -1,6 +1,47 @@
 window.onload = function () {
 	materialInput.init();
 	chartsAnimation.init();
+	modal.init();
+}
+
+const modal = {
+
+	// There is something wrong with the Bootstrap modal
+	// that's why I created this block, just to finish rapidly
+	// 
+	// Sign Up Modal for Mobile
+	modal: document.querySelector('#signup-form-modal'),
+	body: document.querySelector('body'),
+	show: function() {
+		this.modal.classList.add('active');
+		this.body.classList.add('oh');
+	},
+	close: function() {
+		this.modal.classList.remove('active');
+		this.body.classList.remove('oh');
+	},
+	setEventlistener: function() {
+		let signupModalButtons = document.querySelectorAll('.mobile-signup-modal-trigger');
+		if((window.innerWidth <= 992) && signupModalButtons) {
+			[...signupModalButtons].forEach(el => {
+				el.onclick = function(event) {
+					event.preventDefault();
+					event.stopPropagation();
+					modal.show();
+				}
+			});
+		}
+	},
+	init: function() {
+		this.setEventlistener();
+		
+		let modalClose = document.querySelector('.modal-close-button');
+		modalClose.addEventListener('click', function() {
+			modal.close();
+		});
+		
+		window.addEventListener('resize', this.setEventlistener, false);
+	}
 }
 
 const materialInput = {
@@ -68,7 +109,6 @@ const chartsAnimation = {
 		window.addEventListener('DOMContentLoaded', handler, false);
 		window.addEventListener('load', handler, false);
 		window.addEventListener('scroll', handler, false);
-		window.addEventListener('resize', handler, false);
 		return;
 	}
 }

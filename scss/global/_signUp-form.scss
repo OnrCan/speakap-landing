@@ -12,6 +12,8 @@
 	--input-color: #4D4D4D;
 	--grey-60: #939393;
 	
+	.modal-close-button { display: none; }
+	
 	header {
 		h3 {
 			margin-bottom: 12px;
@@ -136,6 +138,37 @@
 	}
 
 	&.in-modal {
-
+		margin: 20px;
+		margin-bottom: 64px;
+		.input-field__text {
+			input {
+				position: relative;
+				z-index: 1;
+				background-color: transparent;
+			}
+			label {
+				z-index: 0;
+			}
+		}
+		.modal-close-button {
+			all: unset;
+			display: block;
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: 16px;
+			right: 13px;
+			cursor: pointer;
+			background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' data-prefix='far' data-icon='times' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' class='svg-inline--fa fa-times fa-w-10 fa-2x'%3E%3Cpath fill='%23939393' d='M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+		}
+		
+		.notice-text {
+			width: 100%;
+			color: #FFFFFF;
+			bottom: -46px;
+		}
 	}
 }

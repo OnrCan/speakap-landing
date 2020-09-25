@@ -17,6 +17,8 @@ html {
 body {
 	font-family: $font-family;
 	padding-top: 66px;
+
+	&.oh { overflow: hidden; }
 }
 
 #main {
@@ -355,6 +357,16 @@ footer {
 			cursor: pointer;
 			text-decoration: underline;
 		}
+	}
+}
+
+#signup-form-modal {
+	&.active {
+		display: block !important;
+		overflow: scroll !important;
+		background-color: #6B7B8C;
+
+		
 	}
 }
 
