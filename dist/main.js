@@ -16,7 +16,14 @@ window.onload = function () {
   materialInput.init();
   chartsAnimation.init();
   modal.init();
+  initTestimonialsSlider();
 };
+/**
+ * 
+ * Initialize sign up modal events
+ * 
+ */
+
 
 var modal = {
   // There is something wrong with the Bootstrap modal
@@ -55,6 +62,12 @@ var modal = {
     window.addEventListener('resize', this.setEventlistener, false);
   }
 };
+/**
+ * 
+ * Material like input events
+ * 
+ */
+
 var materialInput = {
   textInputLabels: function textInputLabels() {
     var textInputs = document.querySelectorAll('input[type="text"], input[type="email"]'),
@@ -81,6 +94,12 @@ var materialInput = {
     });
   }
 };
+/**
+ * 
+ * Chart animations
+ * 
+ */
+
 var chartsAnimation = {
   chartsWrapper: document.querySelector('#js-stats-wrapper'),
   isElementInViewport: function isElementInViewport(el) {
@@ -124,3 +143,57 @@ var chartsAnimation = {
     return;
   }
 };
+/**
+ * 
+ * Initialize testimonials slider events
+ * 
+ */
+
+function initTestimonialsSlider() {
+  var testimonialButtons = document.querySelectorAll('button.testimonial-image'),
+      testimonialMessageWrapper = document.querySelector('.testimonial-message'),
+      testimonialNameWrapper = document.querySelector('.testimonial-name'),
+      testimonialLocationWrapper = document.querySelector('.testimonial-location');
+
+  if (testimonialButtons) {
+    _toConsumableArray(testimonialButtons).forEach(function (button) {
+      var source = button.getAttribute('data-source');
+
+      if (!source) {
+        console.error('missing attr data-source');
+        return;
+      }
+
+      button.addEventListener('click', function (event) {
+        showTestimonialMessage(event, source);
+      });
+    });
+  }
+
+  var showTestimonialMessage = function showTestimonialMessage(event, source) {
+    testimonialButtons.forEach(function (el) {
+      return el.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    var testimonials = {
+      'sarah': {
+        name: 'Sarah Doe',
+        message: 'Tempor sint nostrud incididunt eiusmod consectetur ea id. Labore sunt nisi occaecat aute duis voluptate occaecat non esse. Enim voluptate aliquip eu occaecat laborum non ipsum eu. Cillum cillum commodo elit quis laborum. Tempor do laboris sit qui duis aute et esse duis occaecat exercitation irure.',
+        location: 'New York Pizza - Amsterdam'
+      },
+      'victor': {
+        name: 'Victor Delgado',
+        message: 'NYP Connect helps us keep our staff, mostly young part-timers, involved in the organisation in a modern and positive way. The combination of several well-known social media in one platform is perfect to connect with the individual employee in a way they feel comfortable with and respond to.',
+        location: 'New York Pizza - Heereneveen'
+      },
+      'john': {
+        name: 'John Doe',
+        message: 'Velit ex ut reprehenderit aliqua eiusmod. Velit cillum consequat culpa excepteur anim ex sint elit irure pariatur sunt. Consequat enim commodo dolore nostrud quis reprehenderit est nisi culpa commodo officia reprehenderit. Lorem magna magna officia occaecat reprehenderit proident incididunt minim do exercitation.',
+        location: 'New York Pizza - Utrecht'
+      }
+    };
+    testimonialMessageWrapper.innerHTML = "\u201C".concat(testimonials[source].message, "\u201D");
+    testimonialNameWrapper.innerHTML = "".concat(testimonials[source].name);
+    testimonialLocationWrapper.innerHTML = "".concat(testimonials[source].location);
+  };
+}
