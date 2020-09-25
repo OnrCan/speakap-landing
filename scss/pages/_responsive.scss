@@ -35,4 +35,38 @@
 		p { font-weight: 300; }
 		.sign-up-cta { width: 100%; }
 	}
+
+	section.benefits {
+		.benefits-list {
+			margin-bottom: 40px;
+		}
+
+		& > .container .row:last-of-type {
+			margin-top: 16px;
+		}
+	}
+
+	section.testimonials {
+		background-image: url("img/2@-testimonials-background-waves.png"), linear-gradient(133deg, #0D9B49 0%, rgba(25, 206, 101, 0.6) 100%), url("img/pizza-img-mobile@2x.png");
+		background-position: left top, center center, center center;
+		background-size: 100rem, cover, cover;
+	}
+
+	section.promote {
+		padding-top: 100px;
+		.section-header {
+			padding: 0 20%;
+
+			h2 { margin-top: .5rem; }
+		}
+
+		.container > .row:last-of-type > div[class^="col"] {
+			padding: 0;
+		}
+	}
+
+	footer {
+		background-position: left top;
+	}
+		
 }
