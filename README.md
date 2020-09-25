@@ -1,6 +1,6 @@
 # New York Pizza - Landing Page
 
-You directly open the `index.html` file.
+You can directly open the `index.html` file.
 
 Hi there, first of all I would like to thank you for your time. Below, I listed some statistics about my work experience and suggestions on this project. Thanks.
 
