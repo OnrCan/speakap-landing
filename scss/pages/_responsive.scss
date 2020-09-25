@@ -27,8 +27,11 @@
 	}
 	.hero {
 		padding-top: 191px;
+		background-size: 58rem, 100rem, contain, contain, cover;
+		background-position: left top, left bottom, 0 0, 0 0, center center;
 	}
 	.hero-left-column {
+		h1 { padding-right: 3rem; }
 		p { font-weight: 300; }
 		.sign-up-cta { width: 100%; }
 	}

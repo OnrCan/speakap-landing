@@ -166,18 +166,21 @@ h2 {
     line-height: clamp(32px, 3vw, 46px);
     letter-spacing: 0;
     color: #FFFFFF; }
-    .hero-left-column h1:after {
-      content: '';
+    .hero-left-column h1 span {
       position: relative;
-      display: block;
-      width: 306px;
-      height: 4px;
-      bottom: -4px;
-      left: -2px;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      border-radius: 5px;
-      background-color: #FFFFFF; }
+      white-space: nowrap; }
+      .hero-left-column h1 span:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 101%;
+        height: 4px;
+        bottom: -6px;
+        left: 2px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #FFFFFF; }
   .hero-left-column p {
     margin-top: 26px;
     font-size: 17px;
@@ -374,7 +377,11 @@ footer {
   header .logo-wrapper img {
     width: 106px; }
   .hero {
-    padding-top: 191px; }
+    padding-top: 191px;
+    background-size: 58rem, 100rem, contain, contain, cover;
+    background-position: left top, left bottom, 0 0, 0 0, center center; }
+  .hero-left-column h1 {
+    padding-right: 3rem; }
   .hero-left-column p {
     font-weight: 300; }
   .hero-left-column .sign-up-cta {
