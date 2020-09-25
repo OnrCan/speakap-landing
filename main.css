@@ -228,6 +228,9 @@ section.benefits {
     section.benefits .stats-column-graph svg {
       vertical-align: middle;
       margin-right: 16px; }
+      section.benefits .stats-column-graph svg .hook {
+        -webkit-transition: all 1s ease .3s;
+        transition: all 1s ease .3s; }
     section.benefits .stats-column-graph .percentage {
       vertical-align: middle;
       font-weight: 700;
@@ -242,6 +245,19 @@ section.benefits {
     font-size: 17px;
     line-height: 26px;
     color: var(--grey-70); }
+  section.benefits #animate-chart-1 .hook {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 20%; }
+  section.benefits #animate-chart-2 .hook {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 30%; }
+  section.benefits #animate-chart-3 .hook {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 30%; }
+  section.benefits #js-stats-wrapper.animate #animate-chart-1 .hook,
+  section.benefits #js-stats-wrapper.animate #animate-chart-2 .hook,
+  section.benefits #js-stats-wrapper.animate #animate-chart-3 .hook {
+    stroke-dashoffset: 100%; }
 
 section.testimonials {
   background-color: green;
