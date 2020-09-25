@@ -88,6 +88,13 @@ h2 {
 			color: #FFFFFF;
 		}
 	}
+
+	&-right-column {
+		#signup-form-wrapper {
+			position: relative;
+			z-index: 9;
+		}
+	}
 }
 
 section.benefits {
