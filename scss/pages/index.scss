@@ -95,21 +95,9 @@ h2 {
 	}
 
 	&-right-column {
-		position: relative;
 		#signup-form-wrapper {
 			position: relative;
 			z-index: 9;
-
-		}
-		.notice-text {
-			position: absolute;
-			bottom: -76px;
-			left: 50%;
-			transform: translateX(-50%);
-
-			font-weight: 300;
-			font-size: 15px;
-			color: var(--grey-60);
 		}
 	}
 }
