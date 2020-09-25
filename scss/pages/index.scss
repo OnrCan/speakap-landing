@@ -10,6 +10,10 @@ $enable-grid-classes: true;
 	--pizza-red: #D92F26;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: $font-family;
 	padding-top: 66px;
@@ -339,6 +343,9 @@ footer {
 			font-size: 17px;
 			color: var(--grey-60);
 			line-height: 26px;
+		}
+		a:hover {
+			text-decoration: none;
 		}
 	}
 
