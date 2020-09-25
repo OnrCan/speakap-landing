@@ -1,5 +1,11 @@
 @media screen and (max-width: 1150px) {
 	.hero {
+		background-image:
+			url('img/2@-hero-background-bubble.png'),
+			url('img/2@-hero-background-waves.png'),
+			linear-gradient(133deg, #0D9B49 0%, rgba(25,206,101,0.30) 100%),
+			linear-gradient(270deg, rgba(255,255,255,0.00) 22%, #FFFFFF 70%),
+			url('img/2@-hero-background-image-mobile.jpg');
 		background-size: 58rem, contain, contain, contain, cover;
 		background-position: left top, center bottom, 0 0, 0 0, center center;
 	}
@@ -32,8 +38,12 @@
 	}
 	.hero-left-column {
 		h1 { padding-right: 3rem; }
-		p { font-weight: 300; }
 		.sign-up-cta { width: 100%; }
+		p {
+			font-weight: 300;
+			padding-right: 1.2rem;
+			margin: 2rem 0 1.5rem;
+		}
 	}
 
 	section.benefits {
