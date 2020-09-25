@@ -13,30 +13,39 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 window.onload = function () {
-  var textInputs = document.querySelectorAll('input[type="text"], input[type="email"]');
+  materialInput.init();
+  chartsAnimation.init();
+};
 
-  var textInputParents = _toConsumableArray(textInputs).map(function (el) {
-    return el.parentNode;
-  });
-
-  var textInputLabels = _toConsumableArray(textInputParents).map(function (parent) {
-    return parent.querySelector('label');
-  });
-
-  textInputLabels.forEach(function (label) {
-    if (!label) return;
-    var input = label.nextElementSibling;
-    input.addEventListener('focus', function (event) {
-      label.classList.add('active');
+var materialInput = {
+  textInputLabels: function textInputLabels() {
+    var textInputs = document.querySelectorAll('input[type="text"], input[type="email"]'),
+        textInputParents = _toConsumableArray(textInputs).map(function (el) {
+      return el.parentNode;
     });
-    input.addEventListener('blur', function (event) {
-      if (event.target.value !== '') return;
-      label.classList.remove('active');
-    });
-  });
-  var chartsWrapper = document.querySelector('#js-stats-wrapper');
 
-  function isElementInViewport(el) {
+    return _toConsumableArray(textInputParents).map(function (parent) {
+      return parent.querySelector('label');
+    });
+  },
+  init: function init() {
+    var labels = this.textInputLabels();
+    labels.forEach(function (label) {
+      if (!label) return;
+      var input = label.nextElementSibling;
+      input.addEventListener('focus', function (event) {
+        label.classList.add('active');
+      });
+      input.addEventListener('blur', function (event) {
+        if (event.target.value !== '') return;
+        label.classList.remove('active');
+      });
+    });
+  }
+};
+var chartsAnimation = {
+  chartsWrapper: document.querySelector('#js-stats-wrapper'),
+  isElementInViewport: function isElementInViewport(el) {
     // Special bonus for those using jQuery
     if (typeof jQuery === "function" && el instanceof jQuery) {
       el = el[0];
@@ -48,12 +57,11 @@ window.onload = function () {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     /* or $(window).width() */
     ;
-  }
-
-  function onVisibilityChange(el, callback) {
+  },
+  onVisibilityChange: function onVisibilityChange(el, callback) {
     var old_visible;
     return function () {
-      var visible = isElementInViewport(el);
+      var visible = chartsAnimation.isElementInViewport(el);
 
       if (visible != old_visible) {
         old_visible = visible;
@@ -63,23 +71,19 @@ window.onload = function () {
         }
       }
     };
-  }
+  },
+  init: function init() {
+    var _this = this;
 
-  var handler = onVisibilityChange(chartsWrapper, function () {
-    /* Your code go here */
-    chartsWrapper.classList.toggle('animate');
-  });
+    var handler = this.onVisibilityChange(this.chartsWrapper, function () {
+      _this.chartsWrapper.classList.toggle('animate');
 
-  if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', handler, false);
-    addEventListener('load', handler, false);
-    addEventListener('scroll', handler, false);
-    addEventListener('resize', handler, false);
-  } else if (window.attachEvent) {
-    attachEvent('onDOMContentLoaded', handler); // Internet Explorer 9+ :(
-
-    attachEvent('onload', handler);
-    attachEvent('onscroll', handler);
-    attachEvent('onresize', handler);
+      return;
+    });
+    window.addEventListener('DOMContentLoaded', handler, false);
+    window.addEventListener('load', handler, false);
+    window.addEventListener('scroll', handler, false);
+    window.addEventListener('resize', handler, false);
+    return;
   }
 };

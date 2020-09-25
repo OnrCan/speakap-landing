@@ -1,26 +1,37 @@
 window.onload = function () {
-	const textInputs = document.querySelectorAll('input[type="text"], input[type="email"]');
-	const textInputParents = [...textInputs].map(el => el.parentNode);
-	const textInputLabels = [...textInputParents].map(parent => parent.querySelector('label'));
+	materialInput.init();
+	chartsAnimation.init();
+}
 
-	textInputLabels.forEach(label => {
-		if (!label) return;
-		let input = label.nextElementSibling;
+const materialInput = {
+	textInputLabels: function() {
+		let textInputs = document.querySelectorAll('input[type="text"], input[type="email"]'),
+			textInputParents = [...textInputs].map(el => el.parentNode);
 
-		input.addEventListener('focus', (event) => {
-			label.classList.add('active');
+		return [...textInputParents].map(parent => parent.querySelector('label'))
+	},
+
+	init: function() {
+		let labels = this.textInputLabels();
+		labels.forEach(label => {
+			if (!label) return;
+			let input = label.nextElementSibling;
+	
+			input.addEventListener('focus', (event) => {
+				label.classList.add('active');
+			});
+	
+			input.addEventListener('blur', (event) => {
+				if (event.target.value !== '') return;
+				label.classList.remove('active');
+			});
 		});
+	}
+}
 
-		input.addEventListener('blur', (event) => {
-			if (event.target.value !== '') return;
-			label.classList.remove('active');
-		});
-
-	});
-
-	const chartsWrapper = document.querySelector('#js-stats-wrapper');
-
-	function isElementInViewport (el) {
+const chartsAnimation = {
+	chartsWrapper: document.querySelector('#js-stats-wrapper'),
+	isElementInViewport: function isElementInViewport (el) {
 
 		// Special bonus for those using jQuery
 		if (typeof jQuery === "function" && el instanceof jQuery) {
@@ -35,12 +46,11 @@ window.onload = function () {
 			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
 			rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
 		);
-	}
-	
-	function onVisibilityChange(el, callback) {
+	},
+	onVisibilityChange: function (el, callback) {
 		var old_visible;
 		return function () {
-			var visible = isElementInViewport(el);
+			var visible = chartsAnimation.isElementInViewport(el);
 			if (visible != old_visible) {
 				old_visible = visible;
 				if (typeof callback == 'function') {
@@ -48,22 +58,17 @@ window.onload = function () {
 				}
 			}
 		}
-	}
-	
-	var handler = onVisibilityChange(chartsWrapper, function() {
-		/* Your code go here */
-		chartsWrapper.classList.toggle('animate');
-	});
+	},
 
-	if (window.addEventListener) {
-		addEventListener('DOMContentLoaded', handler, false);
-		addEventListener('load', handler, false);
-		addEventListener('scroll', handler, false);
-		addEventListener('resize', handler, false);
-	} else if (window.attachEvent)  {
-		attachEvent('onDOMContentLoaded', handler); // Internet Explorer 9+ :(
-		attachEvent('onload', handler);
-		attachEvent('onscroll', handler);
-		attachEvent('onresize', handler);
+	init: function() {
+		let handler = this.onVisibilityChange(this.chartsWrapper, () => {
+			this.chartsWrapper.classList.toggle('animate');
+			return;
+		})
+		window.addEventListener('DOMContentLoaded', handler, false);
+		window.addEventListener('load', handler, false);
+		window.addEventListener('scroll', handler, false);
+		window.addEventListener('resize', handler, false);
+		return;
 	}
 }
